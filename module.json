@@ -3,12 +3,6 @@
   "title": "Skill Tree Journals",
   "description": "Create your own skill trees for whatever stupid reason you would like.",
   "author": "Angeleon",
-  "version": "0.0.1",
-  "minimumCoreVersion": "9",
-  "scripts": [
-    "scripts/skill-tree.js"
-  ],
-  "styles": [
-    "styles/skill-tree.css"
-  ]
+  "version": "1",
+  "minimumCoreVersion": "9.269"
 }
