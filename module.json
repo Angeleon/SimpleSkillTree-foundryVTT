@@ -4,7 +4,7 @@
   "description": "Create your own skill trees for whatever stupid reason you would like.",
   "author": "Angeleon",
   "version": "1",
-  "minimumCoreVersion": "9.269",
+  "minimumCoreVersion": "9",
   "url":"https://github.com/Angeleon/SimpleSkillTree-foundryVTT",
   "scripts": [
 	  "scripts/skill-tree.js"
