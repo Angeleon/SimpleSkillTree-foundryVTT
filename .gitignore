@@ -1,0 +1,12 @@
+node_modules/*
+*.code-workspace
+foundry*.js
+package-lock.json
+.vscode
+experiment.js
+*.tgz
+*.zip
+*.lock
+*.obj
+*.bin
+*.exe
