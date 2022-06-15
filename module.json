@@ -6,9 +6,10 @@
   "version": "1.1",
   "minimumCoreVersion": "9",
   "url": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT",
-  "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/1.1.zip",
-  "scripts": [
-	  "scripts/skill-tree.js"
+  "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/1.0.zip",
+  "esmodules": [
+	  "scripts/skill-tree.js",
+	  "scripts/powers.js"
   ],
   "styles":[
 	  "styles/skill-tree.css"

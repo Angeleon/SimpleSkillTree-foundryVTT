@@ -1,288 +1,403 @@
-/*
-    Variables for uniform color control
-*/
-
 body {
-    --dark-mode-journal-dark-accent-color: #061a5e;
-    --dark-mode-journal-base-accent-color: #3F88E6;
-    --dark-mode-journal-light-accent-color: #5a9cf1;
-    --dark-mode-journal-translucent-accent-color: #00239440;
-    --dark-mode-journal-header-color: #bfbfbf;
-    --dark-mode-journal-base-text-color: #bfbfbf;
-    --dark-mode-journal-link-color: #3F88E6;
-    --dark-mode-journal-link-visited-color: #5a9cf1;
-    --dark-mode-journal-window-text-color: #bfbfbf;
-    --dark-mode-journal-button-background-color: #1a1a1a;
-    --dark-mode-journal-button-hover-color: #272727;
-    --dark-mode-journal-background-color: #a5afb4bb;
-    --dark-mode-journal-background-texture-image: #131313;
+    --template-dark-accent-color: #061a5e;
+    --template-base-accent-color: #002394;
+    --template-light-accent-color: #1b47d6;
+    --template-translucent-accent-color: #00239440;
+    --template-header-color: #bfbfbf;
+    --template-base-text-color: #bfbfbf;
+    --template-link-color: #3b56b1;
+    --template-link-visited-color: #405494;
+    --template-window-text-color: #bfbfbf;
+    --template-button-background-color: #1a1a1a;
+    --template-button-hover-color: #272727;
+    --template-background-color: #a5afb4bb;
+    --template-background-texture-image: url(../textures/dark-background-1.jpg);
 }
 
-/************************************************
-	Headers and text
-************************************************/
-
-.dark-mode-journal h2, .dark-mode-journal h1 {
-    border-bottom: 1px solid var(--dark-mode-journal-base-accent-color);
-    color: var(--dark-mode-journal-header-color);
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'titleArea 	titleArea titleArea titleArea titleArea titleArea titleArea infoArea'
+	'.		 	cost cost cost cost cost cost								infoArea'
+    'coreItem 	. . . . . . 												infoArea'
+    'coreItem 	. . . . . . 												infoArea'
+    'coreItem 	. . . . . . 												infoArea'
+    'coreItem 	. . . . . . 												infoArea'
+    'coreItem 	. . . . . . 												infoArea'
+	' . 		. . . . . . 												infoArea'
+    'tItem 		tItem tItem tItem tItem tItem tItem 						infoArea';
+  grid-template-columns: 80px 50px 50px 50px 50px 50px 50px 371px;
+  grid-template-rows: 100px 50px 50px 50px 50px 50px 50px 50px 324px;
+  grid-row-gap: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  width: 770px;
+  height: 940px;
 }
 
-.dark-mode-journal .editor-content>h3, .dark-mode-journal .editor-content>h4, .dark-mode-journal .editor-content>h5, .dark-mode-journal .editor-content>h6 {
-    color: var(--dark-mode-journal-header-color);
+.grid-container > div {
+  text-align: center;
+  font-size: 30px;
 }
 
-.dark-mode-journal .editor-content>p {
-    color: var(--dark-mode-journal-base-text-color);
+.cArea {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* bullet-point list */
-
-.dark-mode-journal .editor-content>ul {
-    color: var(--dark-mode-journal-base-text-color);
+.textArea {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  height: 100%;
+  text-align:left;
+  padding: 2px;
+  text-indent: none;
 }
 
-/* tables in general */
-
-.dark-mode-journal tbody {
-    color: var(--dark-mode-journal-base-text-color);
+.textArea h3{
+  margin-top: 10px;
 }
 
-/* table header cells */
-
-.dark-mode-journal th {
-    color: var(--dark-mode-journal-header-color);
+.titleArea {
+  grid-area: titleArea;
 }
 
-/* MEME minimal compatibility */
-
-.dark-mode-journal .CodeMirror {
-    color: var(--dark-mode-journal-base-text-color);
+.cItem {
+  grid-area: coreItem;
 }
 
-/* The cursor indicating where you are writing */
-
-.dark-mode-journal .CodeMirror-cursor {
-    border-left: 1px solid var(--dark-mode-journal-base-text-color);
+.cost {
+  grid-area: cost;
+  margin-bottom: 0;
+  margin-top: 0
+  padding: 0px;
 }
 
-/************************************************
-    Special text and highlights
-************************************************/
-
-.dark-mode-journal .editor-content>blockquote {
-    color: var(--dark-mode-journal-dark-text-color);
+.cost p {
+  text-align: center;
+  display: contents;
+  font-size: 14px;
+  text-align:left;
+  padding: 0px;
 }
 
-.dark-mode-journal ::selection {
-    background: var(--dark-mode-journal-base-accent-color);
+.cost h5 {
+  text-align: center;
+  display: contents;
+  font-size: 16px;
+  padding: 0px;
 }
 
-/* Links (internet) */
-
-.dark-mode-journal a:link {
-    color: var(--dark-mode-journal-link-color);
+.empty {
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.dark-mode-journal a:visited {
-    color: var(--dark-mode-journal-link-visited-color);
+.bonus {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.dark-mode-journal a:hover {
-    color: var(--dark-mode-journal-link-color);
-    text-shadow: 0px 0px 2px var(--dark-mode-journal-light-accent-color);
+.iItem {
+  grid-area: infoArea;
+  padding-left: 30px;
 }
 
-/* Links (entity, rolls) */
-
-.dark-mode-journal a.entity-link, .dark-mode-journal a.inline-roll {
-    background-color: var(--dark-mode-journal-button-background-color);
+.tItem {
+  grid-area: tItem;
 }
 
-/* Secret section */
-
-.dark-mode-journal section.secret {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: #df94ee20;
+.tItem p{
+  font-size: 14px;
+  font-style: bold;
+  margin-top: 0px;
 }
 
-/* Modifies Polyglot CSS */
-
-.dark-mode-journal .polyglot-journal {
-    background-color: var(--dark-mode-journal-translucent-accent-color);
+.tItem h4{
+  font-size: 16px;
+  margin-bottom: 1px;
+  margin-top: 0px;
+  font-weight: bold;
 }
 
-/* 
-    OPTION Drop cap - you can add font and color options to this block, too!
-    Changing sizes and fonts might require you to test and tweak quite a bit
-    to get exactly the effect you want, but hey, drop caps are cool! 
-*/
-
-.dark-mode-journal span.drop-cap {
-    float: left;
-    font-family: 'anglo_textregular';
-    font-size: 3em;
-    line-height: 0.8em;
-    padding-top: 0em;
-    padding-bottom: 0em;
-    color: var(--dark-mode-journal-header-color);
+.cItem img {
+  height: 70%;
+  width: 70%;
+  border: 3px solid rgba(0, 0, 240, 0.8); 
 }
 
-/************************************************
-    OPTION Added block styles
-************************************************/
-
-.dark-mode-journal section.simple-block {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-translucent-accent-color);
-    border: 1px solid var(--dark-mode-journal-base-accent-color);
-    padding: 4px;
-    margin-right: 2%;
-    margin-left: 2%;
+.gItem {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+  background-image: url("icons/common/frame.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.dark-mode-journal section.simple-block-float {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-translucent-accent-color);
-    border: 1px solid var(--dark-mode-journal-base-accent-color);
-    padding: 4px;
-    margin-right: 2%;
-    margin-left: 2%;
-    width: 35%;
-    float: right;
+.gItem img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.dark-mode-journal section.ridged-block {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-translucent-accent-color);
-    border: 5px ridge var(--dark-mode-journal-base-accent-color);
-    padding: 4px;
-    margin-right: 2%;
-    margin-left: 2%;
+.aItem {
+  margin: auto;
+  border: 0px;
+  background-color: rgba(255, 255, 255, 0.0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px; 
 }
 
-.dark-mode-journal section.ridged-block-float {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-translucent-accent-color);
-    border: 5px ridge var(--dark-mode-journal-base-accent-color);
-    padding: 4px;
-    margin-right: 2%;
-    margin-left: 2%;
-    width: 35%;
-    float: right;
+.aItem img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border: 0px;
 }
 
-/************************************************
-    Background and various window elements
-************************************************/
-
-/* Journal title */
-
-.dark-mode-journal .window-content input[type="text"] {
-    color: var(--dark-mode-journal-header-color);
+.clearTextArea {
+  background-color: rgba(255, 255, 255, 0.0);
+  border: 0px;
+  font-size: 12px;
+  text-align: left;
 }
 
-.dark-mode-journal .window-content input[type="text"]:focus, .dark-mode-journal .window-content input[type="text"]:hover {
-    box-shadow: 0 0 10px var(--dark-mode-journal-base-accent-color);
+.clearTextArea p{
+  margin-top: 3px;
 }
 
-/* Background */
-
-.dark-mode-journal .window-content {
-    background: var(--dark-mode-journal-background-texture-image);
+.clearTextArea h4 {
+  font-weight: bold;
+  margin-bottom: 0px;
 }
 
-.dark-mode-journal button {
-    background-color: var(--dark-mode-journal-button-background-color);
-    color: var(--dark-mode-journal-window-text-color);
-    border-color: var(--dark-mode-journal-button-hover-color);
+.clearTextArea h5 {
+  font-weight: bold;
+  margin-bottom: 0px;
 }
 
-.dark-mode-journal button:hover {
-    background-color: var(--dark-mode-journal-button-hover-color);
-    box-shadow: 0 0 10px var(--dark-mode-journal-base-accent-color);
+.invis {
+  display: none;
 }
 
-.dark-mode-journal ::-webkit-scrollbar-thumb {
-    background: var(--dark-mode-journal-dark-accent-color);
-    border: 1px solid var(--dark-mode-journal-base-accent-color);
+#b1 {
+  background-image: url("icons/common/bonus1.png");
 }
 
-/* Folder dropdown - upper bar */
-
-.dark-mode-journal .editable select[name="folder"] {
-    color: var(--dark-mode-journal-window-text-color);
-    background: var(--dark-mode-journal-background-texture-image);
+#b2 {
+  background-image: url("icons/common/bonus2.png");
 }
 
-.dark-mode-journal .editable select[name="folder"]:focus, .dark-mode-journal .editable select[name="folder"]:hover {
-    box-shadow: 0 0 5px var(--dark-mode-journal-base-accent-color);
+#ch1 {
+  background-image: url("icons/common/ch1.png");
+}
+#ch2 {
+  background-image: url("icons/common/ch2.png");
+}
+#ch3 {
+  background-image: url("icons/common/ch3.png");
 }
 
-/* Folder dropdown - the actual dropdown */
-
-.dark-mode-journal .editable select[name="folder"] option {
-    color: var(--dark-mode-journal-window-text-color);
-    background-color: var(--dark-mode-journal-button-hover-color);
+.vonnomcore {
+  background-image: url("icons/vonnom/core.png");
 }
 
-/*
-    One Journal compatibility
-*/
-
-/* Background with OneJournal */
-
-#OneJournalShell .dark-mode-journal.one-journal-attached .window-content {
-    background: var(--dark-mode-journal-background-texture-image);
+.vonnombg {
+  background-image: url("icons/vonnom/bg.png");
 }
 
-/* Entry title underline with OneJournal */
-
-.dark-mode-journal.one-journal-attached form input[name="name"] {
-    border-color: var(--dark-mode-journal-base-accent-color);
+.vonnomap11 {
+  background-image: url("icons/vonnom/ap11.png");
+}
+.vonnomap12 {
+  background-image: url("icons/vonnom/ap12.png");
+}
+.vonnomap13 {
+  background-image: url("icons/vonnom/ap13.png");
 }
 
-/************************************************
-    Editor 
-    OPTION - depending on if you want the editing experience to be more or less
-    the same as the modified presentation, or a more streamlined editing look, it
-    is here that you should look to enable, disable, or tweak things.
-************************************************/
-
-/* Background */
-
-.dark-mode-journal .editor .tox-edit-area {
-    /* background: var(--dark-mode-journal-background-texture-image); */
-    background-color: var(--dark-mode-journal-background-color);
+.vonnomap21 {
+  background-image: url("icons/vonnom/ap21.png");
+}
+.vonnomap22 {
+  background-image: url("icons/vonnom/ap22.png");
+}
+.vonnomap23 {
+  background-image: url("icons/vonnom/ap23.png");
 }
 
-/* Buttons in edit mode */
-
-.dark-mode-journal .editor button {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-button-background-color);
+.vonnomap31 {
+  background-image: url("icons/vonnom/ap31.png");
+}
+.vonnomap32 {
+  background-image: url("icons/vonnom/ap32.png");
+}
+.vonnomap33 {
+  background-image: url("icons/vonnom/ap33.png");
 }
 
-.dark-mode-journal .editor button:hover {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-button-hover-color);
+.vonnompp1 {
+  background-image: url("icons/vonnom/pp1.png");
+}
+.vonnompp2 {
+  background-image: url("icons/vonnom/pp2.png");
+}
+.vonnompp3 {
+  background-image: url("icons/vonnom/pp3.png");
 }
 
-/* Header bar where the buttons are in edit mode */
-
-.dark-mode-journal .editor .tox-toolbar-overlord, .dark-mode-journal .editor .tox-toolbar__primary {
-    background-color: var(--dark-mode-journal-background-color);
+.peculiarcore {
+  background-image: url("icons/peculiar/core.png");
 }
 
-/* Button to go into edit mode */
-
-.dark-mode-journal .editor-edit {
-    color: var(--dark-mode-journal-base-text-color);
-    background-color: var(--dark-mode-journal-button-background-color);
+.peculiarbg {
+  background-image: url("icons/peculiar/bg.png");
 }
 
-/* Allows for the button images to be in colour */
+.peculiarap11 {
+  background-image: url("icons/peculiar/ap11.png");
+}
+.peculiarap12 {
+  background-image: url("icons/peculiar/ap12.png");
+}
+.peculiarap13 {
+  background-image: url("icons/peculiar/ap13.png");
+}
 
-.dark-mode-journal .tox :not(svg):not(rect) {
-    fill: var(--dark-mode-journal-base-text-color);
-    color: var(--dark-mode-journal-base-text-color);
+.peculiarap21 {
+  background-image: url("icons/peculiar/ap21.png");
+}
+.peculiarap22 {
+  background-image: url("icons/peculiar/ap22.png");
+}
+.peculiarap23 {
+  background-image: url("icons/peculiar/ap23.png");
+}
+
+.peculiarap31 {
+  background-image: url("icons/peculiar/ap31.png");
+}
+.peculiarap32 {
+  background-image: url("icons/peculiar/ap32.png");
+}
+.peculiarap33 {
+  background-image: url("icons/peculiar/ap33.png");
+}
+
+.peculiarpp1 {
+  background-image: url("icons/peculiar/pp1.png");
+}
+.peculiarpp2 {
+  background-image: url("icons/peculiar/pp2.png");
+}
+.peculiarpp3 {
+  background-image: url("icons/peculiar/pp3.png");
+}
+
+.almarcore {
+  background-image: url("icons/almar/core.png");
+}
+
+.almarbg {
+  background-image: url("icons/almar/bg.png");
+}
+
+.almarap11 {
+  background-image: url("icons/almar/ap11.png");
+}
+.almarap12 {
+  background-image: url("icons/almar/ap12.png");
+}
+.almarap13 {
+  background-image: url("icons/almar/ap13.png");
+}
+
+.almarap21 {
+  background-image: url("icons/almar/ap21.png");
+}
+.almarap22 {
+  background-image: url("icons/almar/ap22.png");
+}
+.almarap23 {
+  background-image: url("icons/almar/ap23.png");
+}
+
+.almarap31 {
+  background-image: url("icons/almar/ap31.png");
+}
+.almarap32 {
+  background-image: url("icons/almar/ap32.png");
+}
+.almarap33 {
+  background-image: url("icons/almar/ap33.png");
+}
+
+.almarpp1 {
+  background-image: url("icons/almar/pp1.png");
+}
+.almarpp2 {
+  background-image: url("icons/almar/pp2.png");
+}
+.almarpp3 {
+  background-image: url("icons/almar/pp3.png");
+}
+
+.loringcore {
+  background-image: url("icons/loring/core.png");
+}
+
+.loringbg {
+  background-image: url("icons/loring/bg.png");
+}
+
+.loringap11 {
+  background-image: url("icons/loring/ap11.png");
+}
+.loringap12 {
+  background-image: url("icons/loring/ap12.png");
+}
+.loringap13 {
+  background-image: url("icons/loring/ap13.png");
+}
+
+.loringap21 {
+  background-image: url("icons/loring/ap21.png");
+}
+.loringap22 {
+  background-image: url("icons/loring/ap22.png");
+}
+.loringap23 {
+  background-image: url("icons/loring/ap23.png");
+}
+
+.loringap31 {
+  background-image: url("icons/loring/ap31.png");
+}
+.loringap32 {
+  background-image: url("icons/loring/ap32.png");
+}
+.loringap33 {
+  background-image: url("icons/loring/ap33.png");
+}
+
+.loringpp1 {
+  background-image: url("icons/loring/pp1.png");
+}
+.loringpp2 {
+  background-image: url("icons/loring/pp2.png");
+}
+.loringpp3 {
+  background-image: url("icons/loring/pp3.png");
 }
