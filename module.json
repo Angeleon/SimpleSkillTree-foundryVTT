@@ -5,16 +5,16 @@
   "version": "10.1",
   "authors": [
     {
-      "name": "Angeleon",
+      "name": "Angeleon"
     }
   ],    
- "id": "skill-trees",
+  "id": "skill-trees",
   "compatibility": {
     "minimum": "10",
     "verified": "10"
   },
   "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "10"
+  "compatibleCoreVersion": "10",
   "dependencies": [
     {
       "name": "_document-sheet-registrar",
