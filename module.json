@@ -2,7 +2,7 @@
   "name": "skill-trees",
   "title": "Skill Tree Journals",
   "description": "Create your own skill trees for whatever stupid reason you would like.",
-  "version": "10.1",
+  "version": "10.3"
   "authors": [
     {
       "name": "Angeleon"
@@ -16,7 +16,7 @@
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "10",
   "url": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT",
-  "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/1.1.zip",
+  "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/10.3.zip",
   "esmodules": [
 	  "scripts/skill-tree.js",
 	  "scripts/powers.js"
