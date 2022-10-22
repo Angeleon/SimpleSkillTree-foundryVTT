@@ -16,7 +16,7 @@
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "10",
   "url": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT",
-  "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/10.3.zip",
+  "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/latest.zip",
   "manifest": "https://raw.githubusercontent.com/Angeleon/SimpleSkillTree-foundryVTT/main/module.json",
   "esmodules": [
 	  "scripts/skill-tree.js",
