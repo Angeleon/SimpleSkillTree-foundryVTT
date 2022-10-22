@@ -15,13 +15,6 @@
   },
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "10",
-  "dependencies": [
-    {
-      "name": "_document-sheet-registrar",
-      "manifest": "https://github.com/League-of-Foundry-Developers/document-sheet-registrar/releases/latest/download/module.json",
-      "type": "module"
-    }
-  ],
   "url": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT",
   "download": "https://github.com/Angeleon/SimpleSkillTree-foundryVTT/archive/refs/tags/1.1.zip",
   "esmodules": [
